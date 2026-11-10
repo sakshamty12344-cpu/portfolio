@@ -1,0 +1,477 @@
+/* ==========================================================================
+   ANIMATION SUITE & MOTION DESIGN
+   Portfolio: Sakcham | Creative Technologist & Full-Stack Engineer
+   ========================================================================== */
+
+/* ==========================================================================
+   SCROLL REVEAL STYLES (Intersection Observer Driven)
+   ========================================================================== */
+
+.reveal-init {
+  opacity: 0;
+  transform: translateY(32px);
+  filter: blur(10px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-init.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+}
+
+/* Variant Reveal Classes */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  filter: blur(8px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.is-revealed {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  filter: blur(8px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  filter: blur(8px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+/* Stagger Delays for child sequences */
+.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.delay-4 {
+  transition-delay: 0.4s;
+}
+
+.delay-5 {
+  transition-delay: 0.5s;
+}
+
+.delay-6 {
+  transition-delay: 0.6s;
+}
+
+/* ==========================================================================
+   HERO ENTRANCE STAGGER ANIMATIONS (Runs on load)
+   ========================================================================== */
+
+.hero-animate-1 {
+  opacity: 0;
+  animation: hero-fade-slide 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+.hero-animate-2 {
+  opacity: 0;
+  animation: hero-fade-slide 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+}
+
+.hero-animate-3 {
+  opacity: 0;
+  animation: hero-fade-slide 1s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+}
+
+.hero-animate-4 {
+  opacity: 0;
+  animation: hero-fade-slide 1s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+}
+
+.hero-animate-5 {
+  opacity: 0;
+  animation: hero-fade-slide 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+}
+
+@keyframes hero-fade-slide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+/* ==========================================================================
+   SAKCHAM MONUMENTAL TITLE & CHARACTER ANIMATIONS
+   ========================================================================== */
+
+/* Letter gentle floating idle wave - GPU Composited */
+@keyframes sakcham-letter-float {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0, -8px, 0) rotate(0.8deg);
+  }
+
+  100% {
+    transform: translate3d(0, 2px, 0) rotate(-0.5deg);
+  }
+}
+
+/* Laser sweep light beam - GPU Composited (Zero Reflow) */
+@keyframes sakcham-laser-sweep {
+  0% {
+    transform: translate3d(-100px, 0, 0);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  88% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(min(110vw, 1050px), 0, 0);
+    opacity: 0;
+  }
+}
+
+/* Cyber Holo Scanning line */
+@keyframes cyber-scanline {
+  0% {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, 1100%, 0);
+    opacity: 0.2;
+  }
+}
+
+/* Holographic aura pulse beneath Sakcham */
+@keyframes sakcham-holo-pulse {
+
+  0%,
+  100% {
+    transform: translate3d(-50%, -50%, 0) scale(1);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translate3d(-50%, -50%, 0) scale(1.18);
+    opacity: 0.75;
+  }
+}
+
+/* Spatial Pill Badges Floating */
+@keyframes float-badge-left {
+  0% {
+    transform: translate(0, 0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translate(-6px, -12px) rotate(-1deg);
+  }
+
+  100% {
+    transform: translate(4px, 6px) rotate(-4deg);
+  }
+}
+
+@keyframes float-badge-right {
+  0% {
+    transform: translate(0, 0) rotate(3deg);
+  }
+
+  50% {
+    transform: translate(8px, -14px) rotate(1deg);
+  }
+
+  100% {
+    transform: translate(-4px, 8px) rotate(4deg);
+  }
+}
+
+/* Shockwave ring expand */
+@keyframes shockwave-expand {
+  0% {
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 1;
+    border-width: 4px;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(2.8);
+    opacity: 0;
+    border-width: 1px;
+  }
+}
+
+/* Cyber Matrix Glitch */
+@keyframes glitch-skew {
+
+  0%,
+  100% {
+    transform: skew(0deg);
+  }
+
+  20% {
+    transform: skew(-2deg);
+  }
+
+  40% {
+    transform: skew(1.5deg);
+  }
+
+  60% {
+    transform: skew(-1deg);
+  }
+
+  80% {
+    transform: skew(2deg);
+  }
+}
+
+/* ==========================================================================
+   AMBIENT BACKGROUND GLOW BLOBS - GPU Composited (translate3d)
+   ========================================================================== */
+
+@keyframes float-blob-1 {
+  0% {
+    transform: translate3d(0px, 0px, 0) scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(80px, 60px, 0) scale(1.15) rotate(45deg);
+  }
+
+  100% {
+    transform: translate3d(-50px, 90px, 0) scale(0.9) rotate(90deg);
+  }
+}
+
+@keyframes float-blob-2 {
+  0% {
+    transform: translate3d(0px, 0px, 0) scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(-90px, -50px, 0) scale(1.2) rotate(-60deg);
+  }
+
+  100% {
+    transform: translate3d(60px, -80px, 0) scale(0.95) rotate(-120deg);
+  }
+}
+
+@keyframes float-blob-3 {
+  0% {
+    transform: translate3d(0px, 0px, 0) scale(0.9);
+  }
+
+  50% {
+    transform: translate3d(50px, -40px, 0) scale(1.25);
+  }
+
+  100% {
+    transform: translate3d(-40px, 30px, 0) scale(1);
+  }
+}
+
+/* ==========================================================================
+   INTERACTIVE & MICRO-ANIMATIONS
+   ========================================================================== */
+
+/* Rotating slow ring around avatar */
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pulsing Status Dot */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 8px #10b981;
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(0.85);
+    box-shadow: 0 0 2px #10b981;
+  }
+}
+
+/* Mouse Scroll Animation */
+@keyframes mouse-scroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.3;
+    transform: translateY(8px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+/* Terminal Cursor Blink */
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Infinite Marquee */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Shimmer Loading / Highlight Wave */
+@keyframes shimmer-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Floating Geometric Shape */
+.floating-element {
+  animation: float-gentle 6s ease-in-out infinite alternate;
+}
+
+@keyframes float-gentle {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+/* Magnetic Button Hover Glow */
+.magnetic-btn {
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   REDUCED MOTION SUPPORT (Accessibility)
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-init,
+  .reveal-scale,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .sakcham-char,
+  .sakcham-laser-beam,
+  .sakcham-halo-aura,
+  .hero-glow-blob-1,
+  .hero-glow-blob-2,
+  .hero-glow-blob-3,
+  .avatar-ring,
+  .marquee-track {
+    animation: none !important;
+  }
+}

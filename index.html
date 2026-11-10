@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Sakcham — Creative Technologist & Full-Stack Engineer</title>
+  <meta name="description" content="Portfolio of Sakcham — Creative Technologist & Full-Stack Engineer specializing in high-performance web applications, motion design, and interactive 3D WebGL experiences.">
+  <meta name="keywords" content="Frontend Developer, Creative Technologist, Full-Stack Engineer, WebGL, Three.js, React, UI Motion Design, Sakcham Portfolio">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sakcham — Creative Technologist & Full-Stack Engineer">
+  <meta property="og:description" content="Awwwards-caliber interactive portfolio featuring cinematic motion, 3D WebGL simulations, and high-performance frontend engineering.">
+
+  <!-- Favicon (Inline SVG - Zero 404s, Razor Sharp Retina) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='100' y2='100'><stop offset='0%25' stop-color='%238b5cf6'/><stop offset='100%25' stop-color='%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='%230a0a0a'/><text x='50' y='68' font-size='56' font-family='sans-serif' font-weight='900' fill='url(%23g)' text-anchor='middle'>S</text></svg>">
+
+  <!-- Schema.org Structured Microdata for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sakcham",
+    "jobTitle": "Creative Technologist & Full-Stack Architect",
+    "url": "https://sakcham.dev",
+    "sameAs": [
+      "https://github.com",
+      "https://linkedin.com",
+      "https://twitter.com"
+    ],
+    "knowsAbout": [
+      "Frontend Architecture",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "WebGL",
+      "Three.js",
+      "GLSL Shaders",
+      "Motion Design",
+      "Distributed Systems"
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Accessible Skip-to-content Link -->
+  <a href="#hero" class="skip-to-content">Skip to Main Content</a>
+
+  <!-- ========================================================================
+       CUSTOM CURSOR (Desktop Lerp Physics)
+       ======================================================================== -->
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" aria-hidden="true">
+    <span class="custom-cursor-text"></span>
+  </div>
+
+  <!-- ========================================================================
+       SCROLL PROGRESS BAR
+       ======================================================================== -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ========================================================================
+       HEADER & FLOATING GLASS NAVBAR
+       ======================================================================== -->
+  <header class="navbar">
+    <div class="container-wide navbar-inner">
+      <a href="#hero" class="navbar-brand" aria-label="Sakcham Portfolio Home">
+        <div class="brand-badge">S</div>
+        <div class="brand-name">
+          <span class="brand-title">Sakcham</span>
+          <span class="brand-status">
+            <span class="status-dot"></span>
+            Available for Q4
+          </span>
+        </div>
+      </a>
+
+      <nav class="navbar-nav" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Work</a>
+        <a href="#playground" class="nav-link">Labs</a>
+        <a href="#experience" class="nav-link">Journey</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Sound Toggle -->
+        <button id="sound-toggle-btn" class="sound-toggle-btn" aria-label="Toggle UI Audio Feedback" title="Toggle Audio Feedback">
+          <svg id="sound-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn-nav-cta">
+          <span>Let's Talk</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="menu-toggle-btn" aria-label="Open Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-backdrop"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation Menu">
+    <div>
+      <div class="mobile-drawer-header">
+        <div class="navbar-brand">
+          <div class="brand-badge">S</div>
+          <span class="brand-title">Sakcham</span>
+        </div>
+        <button class="mobile-drawer-close" id="mobile-drawer-close-btn" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-drawer-actions">
+        <button class="mobile-action-pill" id="mobile-theme-toggle" type="button" aria-label="Toggle Dark/Light Mode">
+          <span id="mobile-theme-text">🌓 Theme: Dark</span>
+        </button>
+        <button class="mobile-action-pill" id="mobile-sound-toggle" type="button" aria-label="Toggle UI Audio">
+          <span id="mobile-sound-text">🔊 Sound: Off</span>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-links" aria-label="Mobile Navigation Links">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills &amp; Stack</a>
+        <a href="#projects" class="nav-link">Projects &amp; Work</a>
+        <a href="#playground" class="nav-link">Interactive Labs</a>
+        <a href="#experience" class="nav-link">Career Journey</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#contact" class="nav-link">Contact Hub</a>
+      </nav>
+    </div>
+
+    <div style="display: flex; gap: 1rem; flex-direction: column; margin-top: 1.5rem;">
+      <a href="#contact" class="btn btn-primary btn-glow" style="width: 100%;">
+        <span>Initiate Collaboration</span>
+      </a>
+      <p style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted); text-align: center;">
+        Sakcham © 2026 • 60 FPS Native
+      </p>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       MAIN CONTENT
+       ======================================================================== -->
+  <main>
+
+    <!-- ======================================================================
+         SECTION 1: HERO
+         ====================================================================== -->
+    <section id="hero" class="hero">
+      <!-- Interactive Background Canvas -->
+      <canvas id="hero-particle-canvas" class="hero-canvas-bg"></canvas>
+
+      <!-- Ambient Glow Blobs -->
+      <div class="hero-glow-blob-1" aria-hidden="true"></div>
+      <div class="hero-glow-blob-2" aria-hidden="true"></div>
+      <div class="hero-glow-blob-3" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <!-- Floating 3D Spatial Tag Pills (Desktop Parallax) -->
+        <div class="hero-spatial-container" aria-hidden="true">
+          <div class="spatial-badge spatial-left">
+            <span style="color: var(--accent-primary);">✦</span>
+            <span>3D WebGL &amp; Shaders</span>
+          </div>
+          <div class="spatial-badge spatial-right">
+            <span style="color: var(--accent-secondary);">⚡</span>
+            <span>60 FPS Native Motion</span>
+          </div>
+        </div>
+
+        <!-- Stagger 1: Cyber Status Chip -->
+        <div class="hero-tag hero-animate-1">
+          <span class="status-dot"></span>
+          <span>IDENTITY: SAKCHAM</span>
+          <span style="opacity: 0.4;">|</span>
+          <span>SYS_STATUS: ONLINE</span>
+          <span style="opacity: 0.4;">|</span>
+          <span style="color: var(--accent-secondary);">LATENCY: 12ms</span>
+        </div>
+
+        <!-- Stagger 2: Monumental 3D Animated SAKCHAM Name Stage -->
+        <div class="sakcham-hero-stage hero-animate-2">
+          <!-- Holographic Backing Aura -->
+          <div class="sakcham-halo-aura" aria-hidden="true"></div>
+          
+          <!-- Radiant Scanning Laser Beam -->
+          <div class="sakcham-laser-beam" aria-hidden="true"></div>
+
+          <!-- Monumental Interactive Letters -->
+          <h1 class="sakcham-monument" id="sakcham-hero-name" title="Click or hover letters for harmonic chords and kinetic sparks">
+            <span class="sakcham-char" data-char="S">S</span>
+            <span class="sakcham-char" data-char="A">A</span>
+            <span class="sakcham-char" data-char="K">K</span>
+            <span class="sakcham-char" data-char="C">C</span>
+            <span class="sakcham-char" data-char="H">H</span>
+            <span class="sakcham-char" data-char="A">A</span>
+            <span class="sakcham-char" data-char="M">M</span>
+          </h1>
+
+          <!-- Mirror Reflection on Glossy Virtual Floor -->
+          <div class="sakcham-reflection" aria-hidden="true">SAKCHAM</div>
+        </div>
+
+        <!-- Stagger 3: Cyber Matrix Text Scrambler Subtitle -->
+        <div class="hero-animate-3">
+          <div class="scramble-role-container">
+            <span class="scramble-prefix">&gt;</span>
+            <span id="sakcham-scramble-role" class="scramble-text">CREATIVE TECHNOLOGIST &amp; FULL-STACK ARCHITECT</span>
+            <span class="scramble-cursor"></span>
+          </div>
+
+          <!-- Interactive FX Toolbar -->
+          <div class="sakcham-fx-bar">
+            <button id="fx-laser-pulse" class="fx-btn" type="button">⚡ Laser Beam</button>
+            <button id="fx-gravity-burst" class="fx-btn" type="button">🌌 Cosmic Shockwave</button>
+            <button id="fx-3d-disperse" class="fx-btn" type="button">✦ 3D Disperse</button>
+            <button id="fx-chime-symphony" class="fx-btn" type="button">🎵 Chime Symphony</button>
+          </div>
+
+          <p class="hero-description">
+            Fusing high-performance full-stack engineering with fluid 60FPS motion systems, procedural WebGL shaders, and human-centric ergonomics to build category-defining digital experiences.
+          </p>
+        </div>
+
+        <!-- Stagger 4: Interactive CTA Buttons -->
+        <div class="hero-cta-group hero-animate-4">
+          <a href="#projects" class="btn btn-primary btn-glow magnetic-btn">
+            <span>Explore My Work</span>
+            <span class="btn-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+
+          <a href="#contact" class="btn btn-secondary magnetic-btn">
+            <span>Get in Touch</span>
+            <span class="btn-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <!-- Stagger 5: Key Metrics Strip -->
+        <div class="hero-metrics-strip hero-animate-5">
+          <div class="metric-item">
+            <div class="metric-number counter-animate" data-target="5" data-suffix="+">5+</div>
+            <div class="metric-label">Years Experience</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number counter-animate" data-target="32" data-suffix="+">32+</div>
+            <div class="metric-label">Shipped Systems</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number counter-animate" data-target="99.9" data-decimals="1" data-suffix="%">99.9%</div>
+            <div class="metric-label">Production SLA</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number counter-animate" data-target="15" data-suffix="+">15+</div>
+            <div class="metric-label">Design Honors</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Scroll Prompt -->
+      <a href="#about" class="hero-scroll-indicator" aria-label="Scroll to about section">
+        <span>Scroll Down</span>
+        <div class="mouse-indicator">
+          <div class="mouse-wheel"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 2: ABOUT & BENTO GRID
+         ====================================================================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-badge">Philosophy &amp; Identity</div>
+          <h2 class="section-title">Bridging Code, Art &amp; Architecture</h2>
+          <p class="section-subtitle">
+            I don't just build websites; I design responsive ecosystems where performance meets aesthetic rigor. Every interaction is calculated to delight without friction.
+          </p>
+        </div>
+
+        <!-- Bento Grid Layout -->
+        <div class="bento-grid">
+          
+          <!-- Bento 1: Philosophy Manifesto -->
+          <div class="bento-card bento-hero spotlight-card reveal-init">
+            <div>
+              <div class="section-badge" style="margin-bottom: 0.75rem;">Engineering Manifesto</div>
+              <h3 style="font-size: clamp(1.4rem, 2.8vw, 1.95rem); margin-bottom: 1rem; line-height: 1.25;">
+                "Obsessive about the 16ms frame budget, typography metrics, and interfaces that feel alive."
+              </h3>
+              <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                Over the past 5+ years, I have architected zero-runtime UI libraries, low-latency financial dashboards, and WebGL physics simulations. I believe modern software should feel as tangible and responsive as physical instruments.
+              </p>
+            </div>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <span class="project-tag">⚡ 60/120 FPS Targeted</span>
+              <span class="project-tag">📐 Sub-pixel Ergonomics</span>
+              <span class="project-tag">🛡️ WCAG AAA Accessible</span>
+              <span class="project-tag">🧩 Clean Architecture</span>
+            </div>
+          </div>
+
+          <!-- Bento 2: Interactive Avatar & Status -->
+          <div class="bento-card bento-avatar spotlight-card reveal-init delay-1">
+            <div class="avatar-wrapper">
+              <svg class="avatar-image" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="background: #14141c;">
+                <!-- Procedural Geometric Monogram Avatar -->
+                <circle cx="50" cy="50" r="48" fill="url(#avatar-grad)"/>
+                <defs>
+                  <linearGradient id="avatar-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#1e1e2d"/>
+                    <stop offset="1" stop-color="#0d0d15"/>
+                  </linearGradient>
+                </defs>
+                <path d="M35 32 C35 32, 65 32, 65 44 C65 56, 35 52, 35 66 C35 74, 65 72, 65 72" stroke="var(--accent-primary)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="50" cy="50" r="3" fill="var(--accent-secondary)"/>
+              </svg>
+              <div class="avatar-ring" aria-hidden="true"></div>
+            </div>
+            <h3 class="avatar-name">Sakcham</h3>
+            <p class="avatar-role">Senior Creative Technologist</p>
+            <div class="status-pill">
+              <span class="status-dot"></span>
+              <span>Available for Contract</span>
+            </div>
+          </div>
+
+          <!-- Bento 3: Interactive CLI Terminal -->
+          <div class="bento-card bento-terminal spotlight-card reveal-init delay-2">
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot dot-red"></span>
+                  <span class="terminal-dot dot-yellow"></span>
+                  <span class="terminal-dot dot-green"></span>
+                </div>
+                <div class="terminal-title">sakcham@system-core — zsh</div>
+                <div style="font-size: 0.65rem; color: var(--text-muted);">UTF-8</div>
+              </div>
+              <div id="interactive-terminal-body" class="terminal-body">
+                <div><span class="terminal-prompt">sakcham@terminal:~$</span> <span class="terminal-command">whoami</span></div>
+                <div class="terminal-output">
+                  Creative Technologist &amp; Full-Stack Architect with deep passion for WebGL, micro-frontends, and reactive UI motion.
+                </div>
+                <div style="margin-top: 0.5rem;"><span class="terminal-prompt">sakcham@terminal:~$</span> <span class="terminal-command">help</span></div>
+                <div class="terminal-output">
+                  Available commands: <span style="color:var(--accent-primary)">about</span>, <span style="color:var(--accent-primary)">skills</span>, <span style="color:var(--accent-primary)">projects</span>, <span style="color:var(--accent-primary)">contact</span>, <span style="color:var(--accent-primary)">clear</span>
+                </div>
+              </div>
+              <div style="padding: 0.5rem 0.85rem; background: rgba(0,0,0,0.4); border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 6px;">
+                <span class="terminal-prompt" style="font-size: 0.75rem;">$</span>
+                <input type="text" id="terminal-cli-input" placeholder="Type a command (e.g. skills) and press Enter..." style="flex: 1; background: transparent; border: none; color: #fff; font-family: var(--font-mono); font-size: 0.8rem; outline: none;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 4: Live Clock & Global Presence -->
+          <div class="bento-card bento-clock spotlight-card reveal-init delay-3">
+            <div>
+              <div class="section-badge" style="margin-bottom: 0.5rem;">Global Cadence</div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Real-Time Synchronization</h3>
+              <p style="font-size: 0.82rem; color: var(--text-secondary);">Operating asynchronously worldwide with high-bandwidth communication.</p>
+            </div>
+            
+            <div class="clock-display">
+              <span id="live-clock-time" class="live-time">00:00:00</span>
+              <span id="live-clock-tz" class="live-timezone">UTC • Local Time</span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-secondary);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-secondary);">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+              <span>Remote Native • Global Delivery</span>
+            </div>
+          </div>
+
+          <!-- Bento 5: Core Pillars of Excellence -->
+          <div class="bento-card bento-focus spotlight-card reveal-init delay-4">
+            <div class="section-badge" style="margin-bottom: 0.75rem;">Discipline Matrix</div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 1.25rem;">Four Core Pillars of Engineering</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem;">
+              <div>
+                <h4 style="font-size: 0.95rem; color: var(--accent-primary); margin-bottom: 0.35rem;">01. Motion &amp; Creative 3D</h4>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">Three.js, WebGL shaders, GLSL, physics simulations, SVG animation, and tactile gestures.</p>
+              </div>
+              <div>
+                <h4 style="font-size: 0.95rem; color: var(--accent-secondary); margin-bottom: 0.35rem;">02. Web Platforms &amp; Architecture</h4>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">React, Next.js, TypeScript, state machines, Web Workers, IndexedDB, and low-latency WebSockets.</p>
+              </div>
+              <div>
+                <h4 style="font-size: 0.95rem; color: var(--accent-tertiary); margin-bottom: 0.35rem;">03. Distributed Systems</h4>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">Node.js, Python FastAPI, Go, Docker, PostgreSQL, Redis caching, and edge computing.</p>
+              </div>
+              <div>
+                <h4 style="font-size: 0.95rem; color: #10b981; margin-bottom: 0.35rem;">04. Design Systems &amp; Tokens</h4>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">Headless tokens, multi-brand theming, APCA contrast, micro-interactions, and component modularity.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3: SKILLS & TECH ECOSYSTEM
+         ====================================================================== -->
+    <section id="skills" class="section" style="background: rgba(255, 255, 255, 0.01);">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-badge">Mastered Tooling</div>
+          <h2 class="section-title">The Technical Ecosystem</h2>
+          <p class="section-subtitle">
+            A battle-tested stack selected for performance, maintainability, and expressive creative freedom.
+          </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="skills-filter-bar reveal-init">
+          <button class="filter-btn skill-filter-btn active" data-category="all">All Disciplines</button>
+          <button class="filter-btn skill-filter-btn" data-category="frontend">Frontend &amp; Motion</button>
+          <button class="filter-btn skill-filter-btn" data-category="backend">Backend &amp; Cloud</button>
+          <button class="filter-btn skill-filter-btn" data-category="creative">Creative &amp; 3D</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid">
+          
+          <!-- TypeScript -->
+          <div class="skill-card spotlight-card reveal-init" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 18l6-6-6-6"></path>
+                  <path d="M8 6l-6 6 6 6"></path>
+                </svg>
+              </div>
+              <div class="skill-info">
+                <h3>TypeScript</h3>
+                <span class="skill-category">Strict Type Systems</span>
+              </div>
+            </div>
+            <p class="skill-description">Deep architectural mastery of generic types, discriminated unions, AST transformations, and zero-overhead contracts.</p>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar" style="width: 95%;"></div>
+            </div>
+          </div>
+
+          <!-- React & Next.js -->
+          <div class="skill-card spotlight-card reveal-init delay-1" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(30 12 12)"></ellipse>
+                  <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-30 12 12)"></ellipse>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+              </div>
+              <div class="skill-info">
+                <h3>React &amp; Next.js</h3>
+                <span class="skill-category">Server Components &amp; SSR</span>
+              </div>
+            </div>
+            <p class="skill-description">Streaming server-side rendering, sub-resource integrity, fine-grained state management, and optimized render lifecycles.</p>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar" style="width: 96%;"></div>
+            </div>
+          </div>
+
+          <!-- WebGL & Three.js -->
+          <div class="skill-card spotlight-card reveal-init delay-2" data-category="creative">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="skill-info">
+                <h3>WebGL &amp; Three.js</h3>
+                <span class="skill-category">GPU Shaders &amp; 3D</span>
+              </div>
+            </div>
+            <p class="skill-description">Custom GLSL fragment/vertex shaders, post-processing pipelines, instanced mesh rendering, and 60 FPS mobile optimization.</p>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar" style="width: 90%;"></div>
+            </div>
+          </div>
+
+          <!-- Node.js & Go -->
+          <div class="skill-card spotlight-card reveal-init delay-1" data-category="backend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <div class="skill-info">
+                <h3>Node.js &amp; Go</h3>
+                <span class="skill-category">Microservices &amp; APIs</span>
+              </div>
+            </div>
+            <p class="skill-description">High-throughput HTTP/gRPC gateways, concurrent worker queues, event-driven streaming, and resilient middleware.</p>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar" style="width: 91%;"></div>
+            </div>
+          </div>
+
+          <!-- TailwindCSS & CSS Houdini -->
+          <div class="skill-card spotlight-card reveal-init delay-2" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                </svg>
+              </div>
+              <div class="skill-info">
+                <h3>Modern CSS &amp; Motion</h3>
+                <span class="skill-category">Design Tokens &amp; Layout</span>
+              </div>
+            </div>
+            <p class="skill-description">Sub-pixel fluid clamp typography, CSS grid architecture, hardware-accelerated transforms, and glassmorphism styling.</p>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar" style="width: 98%;"></div>
+            </div>
+          </div>
+
+          <!-- Cloud & DevOps -->
+          <div class="skill-card spotlight-card reveal-init delay-3" data-category="backend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                </svg>
+              </div>
+              <div class="skill-info">
+                <h3>Docker &amp; Cloud Edge</h3>
+                <span class="skill-category">Infrastructure as Code</span>
+              </div>
+            </div>
+            <p class="skill-description">Multi-stage Docker builds, Kubernetes manifests, automated CI/CD pipelines, edge CDN caching, and automated testing.</p>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-bar" style="width: 87%;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Infinite Running Marquee -->
+        <div class="marquee-container" aria-hidden="true">
+          <div class="marquee-track">
+            <div class="marquee-item"><span>⚡ WEBGPU &amp; GLSL</span></div>
+            <div class="marquee-item"><span>✦ TYPESCRIPT 5.x</span></div>
+            <div class="marquee-item"><span>◈ REACT 19 &amp; NEXT.JS</span></div>
+            <div class="marquee-item"><span>★ THREE.JS 3D ENGINE</span></div>
+            <div class="marquee-item"><span>⬡ TAILWIND CSS</span></div>
+            <div class="marquee-item"><span>▲ RUST &amp; WASM</span></div>
+            <div class="marquee-item"><span>● PYTHON &amp; PYTORCH</span></div>
+            <div class="marquee-item"><span>■ DOCKER &amp; K8S</span></div>
+            <!-- Duplicated for seamless loop -->
+            <div class="marquee-item"><span>⚡ WEBGPU &amp; GLSL</span></div>
+            <div class="marquee-item"><span>✦ TYPESCRIPT 5.x</span></div>
+            <div class="marquee-item"><span>◈ REACT 19 &amp; NEXT.JS</span></div>
+            <div class="marquee-item"><span>★ THREE.JS 3D ENGINE</span></div>
+            <div class="marquee-item"><span>⬡ TAILWIND CSS</span></div>
+            <div class="marquee-item"><span>▲ RUST &amp; WASM</span></div>
+          </div>
+
+          <div class="marquee-track reverse">
+            <div class="marquee-item"><span>✺ MICRO-FRONTENDS</span></div>
+            <div class="marquee-item"><span>✦ WEBSOCKET PROTOCOLS</span></div>
+            <div class="marquee-item"><span>❖ 60 FPS REPAINT BUDGET</span></div>
+            <div class="marquee-item"><span>▲ STATE MACHINES (XSTATE)</span></div>
+            <div class="marquee-item"><span>■ WEB WORKERS &amp; THREADS</span></div>
+            <div class="marquee-item"><span>● ZERO-RUNTIME TOKENS</span></div>
+            <!-- Duplicated for seamless loop -->
+            <div class="marquee-item"><span>✺ MICRO-FRONTENDS</span></div>
+            <div class="marquee-item"><span>✦ WEBSOCKET PROTOCOLS</span></div>
+            <div class="marquee-item"><span>❖ 60 FPS REPAINT BUDGET</span></div>
+            <div class="marquee-item"><span>▲ STATE MACHINES (XSTATE)</span></div>
+            <div class="marquee-item"><span>■ WEB WORKERS &amp; THREADS</span></div>
+            <div class="marquee-item"><span>● ZERO-RUNTIME TOKENS</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 4: FEATURED PROJECTS / WORK SHOWCASE
+         ====================================================================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-badge">Selected Creations</div>
+          <h2 class="section-title">Engineered to Inspire</h2>
+          <p class="section-subtitle">
+            A curated portfolio of high-impact systems, generative canvases, and low-latency digital platforms. Click any project to inspect its architectural breakdown.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="projects-filter-bar reveal-init">
+          <button class="filter-btn project-filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn project-filter-btn" data-filter="ai">AI &amp; Canvas</button>
+          <button class="filter-btn project-filter-btn" data-filter="creative">Creative 3D &amp; WebGL</button>
+          <button class="filter-btn project-filter-btn" data-filter="webapps">Full-Stack Apps</button>
+        </div>
+
+        <!-- Dynamic Projects Grid (Rendered via js/projects.js) -->
+        <div id="projects-grid" class="projects-grid">
+          <!-- Populated by ProjectsManager -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 5: CREATIVE LABS / INTERACTIVE PLAYGROUND
+         ====================================================================== -->
+    <section id="playground" class="section" style="background: rgba(255, 255, 255, 0.015);">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-badge">Interactive Playground</div>
+          <h2 class="section-title">The Real-Time Creative Studio</h2>
+          <p class="section-subtitle">
+            Experiment with live physics, procedural wave harmonics, and switch the website's primary accent wavelength in real time.
+          </p>
+        </div>
+
+        <div class="playground-box spotlight-card reveal-init">
+          <div class="playground-controls">
+            <!-- Accent Picker -->
+            <div class="control-group">
+              <label class="control-label">
+                <span>Dynamic Accent Color</span>
+                <span style="color: var(--accent-primary);">Live Reactive</span>
+              </label>
+              <div class="accent-picker-options">
+                <button class="accent-pill accent-violet active" data-accent="violet" title="Electric Violet" aria-label="Set accent to Electric Violet"></button>
+                <button class="accent-pill accent-cyan" data-accent="cyan" title="Cyber Cyan" aria-label="Set accent to Cyber Cyan"></button>
+                <button class="accent-pill accent-emerald" data-accent="emerald" title="Emerald Glow" aria-label="Set accent to Emerald"></button>
+                <button class="accent-pill accent-rose" data-accent="rose" title="Sunset Rose" aria-label="Set accent to Sunset Rose"></button>
+              </div>
+            </div>
+
+            <!-- Kinetic Physics Status -->
+            <div class="control-group">
+              <label class="control-label">
+                <span>GPU Wave Harmonics</span>
+                <span class="font-mono" style="color: var(--accent-secondary);">60 FPS</span>
+              </label>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">
+                Move your cursor over the canvas below to distort mathematical wave nodes, or click anywhere inside to trigger an impulse ripple!
+              </p>
+            </div>
+          </div>
+
+          <!-- Interactive Wave Canvas -->
+          <div class="interactive-preview-canvas">
+            <canvas id="interactive-playground-canvas" class="interactive-canvas-element"></canvas>
+            <div class="canvas-hint">Drag &amp; Click to interact with wave physics</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 6: EXPERIENCE & CAREER TIMELINE
+         ====================================================================== -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-badge">Proven Trajectory</div>
+          <h2 class="section-title">The Career Milestones</h2>
+          <p class="section-subtitle">
+            A continuum of leadership, architectural innovation, and relentless craft across scale-ups and creative agencies.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line">
+            <div class="timeline-line-progress"></div>
+          </div>
+
+          <!-- Item 1 -->
+          <div class="timeline-item reveal-init">
+            <div class="timeline-node">
+              <div class="timeline-node-inner"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Lead Creative Technologist &amp; Architect</h3>
+                <span class="timeline-date">2024 — Present</span>
+              </div>
+              <div class="timeline-company">Nexus Interactive Labs • Global</div>
+              <p class="timeline-desc">
+                Directing frontend architectural strategy, micro-frontend decomposition, and WebGL creative engineering for international enterprise clients. Spearheaded design token unification across 12 product squads.
+              </p>
+              <div class="timeline-tags">
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">Three.js</span>
+                <span class="project-tag">Design Systems</span>
+                <span class="project-tag">Performance Auditing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item reveal-init delay-1">
+            <div class="timeline-node">
+              <div class="timeline-node-inner"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Senior Full-Stack UI Engineer</h3>
+                <span class="timeline-date">2022 — 2024</span>
+              </div>
+              <div class="timeline-company">Aura Systems Inc. • San Francisco / Remote</div>
+              <p class="timeline-desc">
+                Engineered real-time trading terminals and high-concurrency data visualizations processing 80,000 live updates/sec. Halved bundle size by introducing WASM parsing modules and custom canvas rendering.
+              </p>
+              <div class="timeline-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Rust / WASM</span>
+                <span class="project-tag">WebSockets</span>
+                <span class="project-tag">Docker</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item reveal-init delay-2">
+            <div class="timeline-node">
+              <div class="timeline-node-inner"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Frontend Motion Specialist</h3>
+                <span class="timeline-date">2020 — 2022</span>
+              </div>
+              <div class="timeline-company">Vanguard Studios • New York / Remote</div>
+              <p class="timeline-desc">
+                Collaborated with Fortune 500 brands to build Awwwards Site-of-the-Day winning marketing portals, interactive 3D product launches, and fluid web experiences.
+              </p>
+              <div class="timeline-tags">
+                <span class="project-tag">Vanilla JS</span>
+                <span class="project-tag">CSS Keyframes</span>
+                <span class="project-tag">SVG Animation</span>
+                <span class="project-tag">Accessibility</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 7: TESTIMONIALS & ENDORSEMENTS
+         ====================================================================== -->
+    <section id="testimonials" class="section" style="background: rgba(255, 255, 255, 0.01);">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-badge">Client Endorsements</div>
+          <h2 class="section-title">What Collaborators Say</h2>
+          <p class="section-subtitle">
+            Trusted by founders, engineering directors, and product leaders globally.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Card 1 -->
+          <div class="testimonial-card spotlight-card reveal-init">
+            <div>
+              <div class="quote-icon">“</div>
+              <p class="testimonial-text">
+                Sakcham delivered an interface that felt completely ahead of its time. His mastery of both low-level performance and cinematic motion is virtually unmatched in the frontend landscape.
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #8b5cf6, #3b82f6); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold;">
+                EL
+              </div>
+              <div class="author-info">
+                <h4>Elena Rostova</h4>
+                <p>VP of Product • Synapse AI</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="testimonial-card spotlight-card reveal-init delay-1">
+            <div>
+              <div class="quote-icon">“</div>
+              <p class="testimonial-text">
+                Working with Sakcham was a masterclass in frontend engineering. He transformed our complex real-time terminal into a lightning-fast, silky smooth application that our algorithmic traders adore.
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #06b6d4, #10b981); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold;">
+                DK
+              </div>
+              <div class="author-info">
+                <h4>David Kim</h4>
+                <p>Chief Technology Officer • Vesper</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="testimonial-card spotlight-card reveal-init delay-2">
+            <div>
+              <div class="quote-icon">“</div>
+              <p class="testimonial-text">
+                The attention to detail is staggering. Micro-interactions, audio feedback, zero CLS shifts, and immaculate responsiveness. Sakcham is the engineer every creative director dreams of.
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #f43f5e, #fb923c); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold;">
+                SM
+              </div>
+              <div class="author-info">
+                <h4>Sarah Montgomery</h4>
+                <p>Creative Director • Kinetic Brand</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 8: CONTACT & COMMISSION HUB
+         ====================================================================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-wrapper">
+          
+          <!-- Contact Left Details -->
+          <div class="contact-info reveal-left">
+            <div>
+              <div class="section-badge" style="margin-bottom: 1rem;">Let's Build Together</div>
+              <h2 class="contact-title">Have a vision?<br>Let's make it reality.</h2>
+              <p class="contact-subtitle">
+                Whether you need a flagship web experience, a 3D WebGL simulator, or a bespoke design token architecture, I am currently available for select advisory and engineering engagements.
+              </p>
+
+              <div class="contact-methods">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="contact-details">
+                    <span>Direct Transmission</span>
+                    <a href="mailto:sakcham.dev@example.com">sakcham.dev@example.com</a>
+                    <div>
+                      <button id="copy-email-badge" class="email-copy-badge" type="button" aria-label="Copy email address to clipboard">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span>Click to Copy Email</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                  </div>
+                  <div class="contact-details">
+                    <span>Turnaround Time</span>
+                    <p>Within 24 Hours • Fast Response</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div>
+              <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.75rem; letter-spacing: 0.05em;">Connect on Social Channels</p>
+              <div class="social-links">
+                <!-- GitHub -->
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" aria-label="GitHub">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+                <!-- X / Twitter -->
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" title="X / Twitter" aria-label="Twitter">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                  </svg>
+                </a>
+                <!-- Dribbble -->
+                <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Dribbble" aria-label="Dribbble">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path>
+                    <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path>
+                    <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Right Form -->
+          <div class="contact-form-wrapper reveal-right">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name *</label>
+                <input type="text" id="name" class="form-input" placeholder="e.g. Satoshi Nakamoto" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" id="email" class="form-input" placeholder="satoshi@domain.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="interest" class="form-label">Project Domain</label>
+                <input type="text" id="interest" class="form-input" placeholder="e.g. 3D WebGL, Design System, Full-Stack Architecture">
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Project Scope &amp; Brief *</label>
+                <textarea id="message" class="form-textarea" placeholder="Tell me about your vision, timeline, and key goals..." required></textarea>
+              </div>
+
+              <div class="form-status" role="alert"></div>
+
+              <button type="submit" class="btn btn-primary btn-glow" style="width: 100%;">
+                <span>Transmit Message</span>
+                <span class="btn-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       PROJECT DETAILS MODAL DIALOG
+       ======================================================================== -->
+  <div id="project-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-dynamic-body">
+    <div class="modal-dialog">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div id="modal-dynamic-body" class="modal-content">
+        <!-- Dynamically injected via ProjectsManager -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="navbar-brand">
+            <div class="brand-badge">S</div>
+            <span class="brand-title">Sakcham</span>
+          </div>
+          <p>
+            Designing and engineering immersive web experiences, high-performance distributed systems, and kinetic motion architectures.
+          </p>
+        </div>
+
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <div class="footer-nav">
+              <a href="#hero">Home</a>
+              <a href="#about">About</a>
+              <a href="#skills">Skills &amp; Tech</a>
+              <a href="#projects">Selected Work</a>
+              <a href="#playground">Interactive Labs</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Featured Labs</h4>
+            <div class="footer-nav">
+              <a href="#playground">Wave Harmonics</a>
+              <a href="#projects">Aetheria AI Canvas</a>
+              <a href="#projects">Chronos 3D Physics</a>
+              <a href="#projects">Pulse Browser OS</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Presence</h4>
+            <div class="footer-nav">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+              <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer">Dribbble</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          <span>© 2026 Sakcham. All Rights Reserved. Crafted with vanilla HTML5, CSS3, &amp; ES2024.</span>
+        </div>
+        <a href="#hero" class="back-to-top-btn" aria-label="Back to top">
+          <span>Back to Top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       SCRIPTS (Native Vanilla JS, zero heavy libraries)
+       ======================================================================== -->
+  <script src="js/sound.js"></script>
+  <script src="js/canvas.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
